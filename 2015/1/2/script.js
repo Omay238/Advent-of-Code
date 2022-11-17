@@ -8,6 +8,8 @@ fetch("../data.txt")
         }else{
             pos--;
         }
+        if(pos === -1){
+            document.querySelector("#out").innerText = i;
+        }
     }
-    document.querySelector("#out").innerText = pos;
 });
