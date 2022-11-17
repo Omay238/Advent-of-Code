@@ -10,6 +10,7 @@ fetch("../data.txt")
         }
         if(pos === -1){
             document.querySelector("#out").innerText = i;
+            return;
         }
     }
 });
