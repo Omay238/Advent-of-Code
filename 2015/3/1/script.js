@@ -15,7 +15,13 @@ fetch("../data.txt")
         }else if(data.charAt(i) === "v"){
             y++;
         }
-        if(!visited.includes({x:x,y:y})){
+        if(!visited.find((e) => {
+            if(x.x === x && x.y === y){
+                return true;
+            }else{
+                return false;
+            }
+        })){
             visited.push({x:x,y:y});
         }
     }

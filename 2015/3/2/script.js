@@ -22,10 +22,22 @@ fetch("../data.txt")
             y++;
             ry--;
         }
-        if(!visited.includes({x:x,y:y})){
+        if(!visited.find((e) => {
+            if(x.x === x && x.y === y){
+                return true;
+            }else{
+                return false;
+            }
+        })){
             visited.push({x:x,y:y});
         }
-        if(!visited.includes({x:rx,y:ry})){
+        if(!visited.find((e) => {
+            if(x.x === rx && x.y === ry){
+                return true;
+            }else{
+                return false;
+            }
+        })){
             visited.push({x:rx,y:ry});
         }
     }
