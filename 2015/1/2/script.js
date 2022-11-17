@@ -9,7 +9,7 @@ fetch("../data.txt")
             pos--;
         }
         if(pos === -1){
-            document.querySelector("#out").innerText = i;
+            document.querySelector("#out").innerText = i+1;
             return;
         }
     }
