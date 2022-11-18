@@ -16,7 +16,7 @@ fetch("../data.txt")
             y++;
         }
         if(!visited.find((e) => {
-            if(x.x === x && x.y === y){
+            if(e.x === x && e.y === y){
                 return true;
             }else{
                 return false;
