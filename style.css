@@ -6,6 +6,7 @@
 }
 a {
   color: #008817;
+  display: block;
 }
 a:hover {
   color: #75FF7A;
