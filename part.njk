@@ -1,0 +1,9 @@
+{% extends "base.njk" %}
+{% block title %}Part {{path.split("/")[3]}} Day {{path.split("/")[2]}} {{ path.split("/")[1] }}{% endblock %}
+{% block body %}
+<a href=".."><h1>Back</h1></a>
+<p id="out"></p>
+<textarea id="input"></textarea><br>
+<button id="run">Get Answer</button>
+<script src="{{ path }}.js"></script>
+{% endblock %}

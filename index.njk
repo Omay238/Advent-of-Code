@@ -1,0 +1,7 @@
+{% extends "base.njk" %}
+{% block title %}Archives{% endblock %}
+{% block body %}
+{% for i in range(2015, 2022) -%}
+<a href="{{ i }}">[{{ i }}]</a>
+{%- endfor %}
+{% endblock %}
