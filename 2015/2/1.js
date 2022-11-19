@@ -1,6 +1,5 @@
-fetch("../data.txt")
-.then(res => res.text())
-.then((data) => {
+document.querySelector("#run").onclick = function(){
+    var data = document.querySelector("#input").value;
     var sqft = 0;
     var splitData = data.split("\n");
     for(var i = 0; i < splitData.length; i++){
@@ -11,4 +10,4 @@ fetch("../data.txt")
         sqft += 2*l*w + 2*w*h + 2*h*l + Math.min(l*w, w*h, h*l);
     }
     document.querySelector("#out").innerText = sqft;
-});
+}

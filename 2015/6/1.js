@@ -1,6 +1,5 @@
-fetch("../data.txt")
-.then(res => res.text())
-.then((data) => {
+document.querySelector("#run").onclick = function(){
+    var data = document.querySelector("#input").value;
     var split = data.split("\n");
     var map = [];
     for(var i = 0; i <= 999; i++){
@@ -48,4 +47,4 @@ fetch("../data.txt")
         });
     });
     document.querySelector("#out").innerText = n;
-});
+}

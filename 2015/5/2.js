@@ -1,6 +1,5 @@
-fetch("../data.txt")
-.then(res => res.text())
-.then((data) => {
+document.querySelector("#run").onclick = function(){
+    var data = document.querySelector("#input").value;
     var split = data.split("\n");
     var nice = 0;
     for(var i = 0; i < split.length; i++){
@@ -28,4 +27,4 @@ fetch("../data.txt")
         }
     }
     document.querySelector("#out").innerText = nice;
-});
+}

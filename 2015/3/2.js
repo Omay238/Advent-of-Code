@@ -1,6 +1,5 @@
-fetch("../data.txt")
-.then(res => res.text())
-.then((data) => {
+document.querySelector("#run").onclick = function(){
+    var data = document.querySelector("#input").value;
     var visited = [];
     var x = 0;
     var y = 0;
@@ -49,4 +48,4 @@ fetch("../data.txt")
         }
     }
     document.querySelector("#out").innerText = visited.length;
-});
+}

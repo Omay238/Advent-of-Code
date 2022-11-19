@@ -1,6 +1,5 @@
-fetch("../data.txt")
-.then(res => res.text())
-.then((data) => {
+document.querySelector("#run").onclick = function(){
+    var data = document.querySelector("#input").value;
     var ft = 0;
     var splitData = data.split("\n");
     for(var i = 0; i < splitData.length; i++){
@@ -9,4 +8,4 @@ fetch("../data.txt")
         ft += split2[0]*2 + split2[1]*2 + split2[0]*split2[1]*split2[2];
     }
     document.querySelector("#out").innerText = ft;
-});
+}
