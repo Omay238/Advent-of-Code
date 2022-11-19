@@ -1,0 +1,8 @@
+{% extends "base.njk" %}
+{% block title %}{{ path.split("/")[1] }}{% endblock %}
+{% block body %}
+<p id="out"></p>
+<textarea id="input"></textarea>
+<button id="run">Get Answer</button>
+<script src="{{ path }}.js"></script>
+{% endblock %}
