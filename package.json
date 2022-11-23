@@ -2,5 +2,8 @@
   "dependencies": {
     "mime": "^3.0.0",
     "nunjucks": "^3.2.3"
+  },
+  "scripts": {
+    "dev": "node index.js"
   }
 }
