@@ -12,11 +12,22 @@
 </style>
 {% endblock %}
 {% block body %}
+<p>For editing code, the onpress is already added. Do not put it in your code.</p>
+<textarea id="input"></textarea><br>
+<button id="run">Get Answer</button>
+<p id="out"></p>
 <div id="editor"></div>
+<button id="upload">Upload</button>
 <script src="/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
+    document.querySelector("#run").onclick = function(){
+        eval(editor.getValue());
+    }
+    document.querySelector("#upload").onclick = function(){
+        eval(editor.getValue());
+    }
 </script>
 {% endblock %}
