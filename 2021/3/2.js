@@ -14,16 +14,20 @@ document.querySelector("#run").onclick = function(){
                 ones++;
             }
         }
-        var c = zeros > ones ? "0" : "1";
+        console.log(split);
+        var c = (ones >= zeros) ? "1" : "0";
         for(var j = 0; j < split.length; j++){
             if(split[j].charAt(i) !== c){
                 split.splice(j, 1);
             }
         }
+        // ogr = split;
         if(split.length === 1){
             ogr = split[0];
             break;
         }
+        console.log(c);
+        console.log(split);
     }
     for(var i = 0; i < split2[0].length; i++){
         var zeros = 0;
@@ -41,10 +45,13 @@ document.querySelector("#run").onclick = function(){
                 split2.splice(j, 1);
             }
         }
+        // co2 = split2;
         if(split2.length === 1){
             co2 = split2[0];
             break;
         }
     }
-    document.querySelector("#out").innerText = parseInt(ogr, 2);
+    console.log(ogr);
+    console.log(co2);
+    document.querySelector("#out").innerText = parseInt(ogr, 2) + parseInt(co2, 2);
 }
