@@ -1,0 +1,79 @@
+{% extends "base.njk" %}
+{% block title %}Editor{% endblock %}
+{% block head %}
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 50vh;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+        html,
+        body {
+            background-color: #0F0F23;
+            color: #CCBD9B;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        button,
+        input,
+        textarea:not(.ace_text-input) {
+            background-color: #0F0F23;
+            background: #2D2D41;
+            color: #CCBD9B;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        a {
+            background-color: #0F0F23;
+            color: #008817;
+            display: block;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        a:hover {
+            background-color: #0F0F23;
+            color: #75FF7A;
+            font-family: 'Source Code Pro', monospace;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <p>For editing code, the onpress is already added. Do not put it in your code.</p>
+    <textarea id="input"></textarea>
+    <br>
+    <button id="run">Get Answer</button>
+    <p id="out"></p>
+    <div id="editor">
+        var data = document.querySelector("#input").value;
+        document.querySelector("#out").innerHTML = data;
+    </div>
+    <form action="/api/update" method="post" target="hidden">
+        <label for="year">Year:</label>
+        <input type="text" name="year">
+        <label for="day">Day:</label>
+        <input type="text" name="day">
+        <label for="part">Part:</label>
+        <input type="text" name="part">
+        <input type="text" name="txt" id="txt" hidden>
+        <input type="submit">
+    </form>
+    <iframe name="hidden" hidden></iframe>
+    <script src="/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/javascript");
+        document.querySelector("#run").onclick = function() {
+            eval(editor.getValue());
+        }
+        document.querySelector("#txt").value = editor.getValue();
+        document.querySelector("#editor").onkeypress = function() {
+            document.querySelector("#txt").value = editor.getValue();
+        }
+    </script>
+{% endblock %}
