@@ -67,5 +67,5 @@ document.querySelector("#run").onclick = function() {
         hash = MD5(data + n);
         n++;
     }
-    document.querySelector("#out").innerHTML = n - ;
+    document.querySelector("#out").innerHTML = n - 1;
 }

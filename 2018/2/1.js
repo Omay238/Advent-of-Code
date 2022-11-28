@@ -6,7 +6,7 @@ document.querySelector("#run").onclick = function() {
     for (var i = 0; i < split.length; i++) {
         var letters = {};
         for (var j = 0; j < split[i].length; j++) {
-            letters[split[i].charAt(j)] = letters[split[i].charAt(j)] + 1 || ;
+            letters[split[i].charAt(j)] = letters[split[i].charAt(j)] + 1 || 0;
         }
         var twof = false;
         var threef = false;

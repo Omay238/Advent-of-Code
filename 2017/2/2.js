@@ -8,7 +8,7 @@ document.querySelector("#run").onclick = function() {
         });
         for (var j = 0; j < split2.length; j++) {
             for (var k = 0; k < split2.length; k++) {
-                if (split2[j] / split2[k] === Math.round(split2[j] / split2[k]) && j !== ) {
+                if (split2[j] / split2[k] === Math.round(split2[j] / split2[k]) && j !== k) {
                     answer += split2[j] / split2[k];
                 }
             }

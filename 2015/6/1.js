@@ -37,7 +37,7 @@ document.querySelector("#run").onclick = function() {
             var y1 = parseInt(t[0].split(",")[1]);
             var x2 = parseInt(t[2].split(",")[0]);
             var y2 = parseInt(t[2].split(",")[1]);
-            for (var j = x1; j < x2 + ; j++) {
+            for (var j = x1; j < x2 + 1; j++) {
                 for (var k = y1; k < y2 + 1; k++) {
                     world[k][j] = false;
                 }

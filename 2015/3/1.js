@@ -23,5 +23,5 @@ document.querySelector("#run").onclick = function() {
             visited.push([x, y]);
         }
     }
-    document.querySelector("#out").innerHTML = visited.length + ;
+    document.querySelector("#out").innerHTML = visited.length + 1;
 }
