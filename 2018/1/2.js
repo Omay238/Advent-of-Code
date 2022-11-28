@@ -10,7 +10,7 @@ document.querySelector("#run").onclick = function() {
                 document.querySelector("#out").innerHTML = frequency;
                 return;
             } else {
-                prev.push(frequenc);
+                prev.push(frequency);
             }
         }
     }
