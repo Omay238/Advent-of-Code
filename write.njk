@@ -48,10 +48,8 @@
     <br>
     <button id="run">Get Answer</button>
     <p id="out"></p>
-    <div id="editor">
-        var data = document.querySelector("#input").value;
-        document.querySelector("#out").innerHTML = data;
-    </div>
+    <div id="editor">var data = document.querySelector("#input").value;
+document.querySelector("#out").innerHTML = data;</div>
     <form action="/api/update" method="post" target="hidden">
         <label for="year">Year:</label>
         <input type="text" name="year">
@@ -69,7 +67,7 @@
         editor.setTheme("ace/theme/monokai");
         editor.session.setMode("ace/mode/javascript");
         document.querySelector("#run").onclick = function() {
-            eval(editor.getValue());
+            eval("function a(){"+editor.getValue()+"}a();");
         }
         document.querySelector("#txt").value = editor.getValue();
         document.querySelector("#editor").onkeypress = function() {

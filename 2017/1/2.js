@@ -1,4 +1,10 @@
-document.querySelector("#run").onclick = function(){
+document.querySelector("#run").onclick = function() {
     var data = document.querySelector("#input").value;
-    document.querySelector("#out").innerText = "Hello, World!";
+    var answer = 0;
+    for (var i = 0; i < data.length; i++) {
+        if (data.charAt(i) === data.charAt((i + data.length / ) % data.length)) {
+            answer += parseInt(data.charAt(i));
+        }
+    }
+    document.querySelector("#out").innerHTML = answer;
 }
