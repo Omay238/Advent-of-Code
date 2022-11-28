@@ -3,6 +3,7 @@ const http = require('http');
 const mime = require('mime');
 const nunjucks = require('nunjucks');
 const url = require("url");
+const qs = require("querystring");
 const data = JSON.parse(fs.readFileSync("./data.json"));
 http.createServer(function (req, res) {
     if(req.method === "GET"){
@@ -34,18 +35,25 @@ http.createServer(function (req, res) {
     }else if(req.method === "POST"){
         let p = url.parse(req.url);
         if(p.path === "/api/update"){
-            let year = p.query.year;
-            let day = p.query.day;
-            let part = p.query.part;
             let data = "";
             req.on("data", (dat) => {
                 data += dat;
             });
             req.on("end", () => {
-                data = JSON.parse(data);
+                data = qs.parse(data);
+                let year = data.year;
+                let day = data.day;
+                let part = data.part;
+                console.log(year);
                 fs.writeFile(`./${year}/${day}/${part}.js`, `document.querySelector("#run").onclick = function(){
-                    ${data}
-                }`);
+                    ${data.txt}
+                }`, (err) => {
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log("File changed");
+                    }
+                });
             })
         }
     }

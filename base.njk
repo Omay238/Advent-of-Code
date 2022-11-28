@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>AoC {% block title %}{% endblock %}</title>
+        <title>AoC
+            {% block title %}{% endblock %}
+        </title>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <style>
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-* {
-    background-color: #0F0F23;
-    color: #CCBD9B;
-    font-family: 'Source Code Pro', monospace;
-}
-button, textarea {
-    background: #2D2D41;
-}
-a {
-    color: #008817;
-    display: block;
-}
-a:hover {
-    color: #75FF7A;
-}
-    </style>
+        {% block head %}
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+                * {
+                    background-color: #0F0F23;
+                    color: #CCBD9B;
+                    font-family: 'Source Code Pro', monospace;
+                }
+
+                button,
+                textarea:not(.ace_text-input) {
+                    background: #2D2D41;
+                }
+
+                a {
+                    color: #008817;
+                    display: block;
+                }
+
+                a:hover {
+                    color: #75FF7A;
+                }
+            </style>
+        {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
