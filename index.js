@@ -1,3 +1,4 @@
+const beautify = require("js-beautify").js;
 const fs = require("fs");
 const http = require('http');
 const mime = require('mime');
@@ -45,9 +46,7 @@ http.createServer(function (req, res) {
                 let day = data.day;
                 let part = data.part;
                 console.log(year);
-                fs.writeFile(`./${year}/${day}/${part}.js`, `document.querySelector("#run").onclick = function(){
-                    ${data.txt}
-                }`, (err) => {
+                fs.writeFile(`./${year}/${day}/${part}.js`, beautify(`document.querySelector("#run").onclick = function(){${data.txt}}`), (err) => {
                     if(err){
                         console.log(err);
                     }else{
