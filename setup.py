@@ -4,7 +4,7 @@ default = ""
 with open("./default.txt", "r") as txt:
     default = txt.read()
 
-for i in range(2015, 2022):
+for i in range(2015, 2023):
     os.system(f"mkdir {i}")
     for j in range(1, 26):
         os.system(f"mkdir {i}/{j}")
